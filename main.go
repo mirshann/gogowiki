@@ -62,7 +62,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request, title string) {
 var templates = template.Must(template.ParseGlob("templates/*.tmpl"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
-	err := templates.ExecuteTemplate(w, tmpl+".html", p)
+	err := templates.ExecuteTemplate(w, tmpl + ".tmpl", p)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
