@@ -1,0 +1,31 @@
+FROM golang:1.20 AS build-stage
+
+WORKDIR /app
+
+COPY go.mod ./
+RUN go mod download
+
+COPY *.go ./
+RUN CGO_ENABLED=0 GOOS=linux go build -o /gogowiki
+
+RUN echo "nobody:x:65534:65534:Nobody:/:" > /etc_passwd
+
+# Run the tests in the container
+FROM build-stage AS run-test-stage
+RUN go test -v ./...
+
+# Deploy the application binary into a lean image
+FROM scratch AS build-release-stage
+
+COPY --from=build-stage /etc_passwd /etc/passwd
+USER nobody
+
+WORKDIR /app
+
+COPY --from=build-stage --chmod=500 /gogowiki ./
+COPY --chown=nobody --chmod=600 data ./data/
+COPY --chown=nobody --chmod=400 templates ./templates/
+
+EXPOSE 8080
+
+ENTRYPOINT ["/app/gogowiki"]
