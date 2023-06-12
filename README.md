@@ -7,3 +7,14 @@ for local build:
 
 for local docker build:
 '''$ docker build -t gogowiki:local .'''
+
+## TODO
+
+- [ ] Make app work with mongo DB
+- [ ] Update automation for local docker run of mongodb with app
+- [ ] Prepare terraform for cloud infrastructure deployment:
+  - [ ] Kubernetes cluster
+  - [ ] Domain infrastructure
+  - [ ] Roles
+  - [ ] Load Balancing
+  - [ ]  
