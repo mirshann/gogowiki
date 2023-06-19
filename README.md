@@ -12,6 +12,8 @@ for local docker build:
 
 ### Iteration 0: Manual deployment
 
+![Architecture](img/gogowiki.svg)
+
 1. Container Host
 2. CI host (Jenkins)
 3. Secret storage host/service (Vault)
