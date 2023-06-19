@@ -10,11 +10,14 @@ for local docker build:
 
 ## TODO
 
-- [ ] Make app work with mongo DB
-- [ ] Update automation for local docker run of mongodb with app
-- [ ] Prepare terraform for cloud infrastructure deployment:
-  - [ ] Kubernetes cluster
-  - [ ] Domain infrastructure
-  - [ ] Roles
-  - [ ] Load Balancing
-  - [ ]  
+### Iteration 0: Manual deployment
+
+1. Container Host
+2. CI host (Jenkins)
+3. Secret storage host/service (Vault)
+
+### Iteration 1: automated deployment
+
+1. Terraform for infrastructure in Iteration 0
+2. Kubernetes cluster automated deployment
+3. 
