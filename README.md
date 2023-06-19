@@ -12,7 +12,7 @@ for local docker build:
 
 ### Iteration 0: Manual deployment
 
-![Architecture](img/gogowiki.svg)
+![Architecture](img/gogowiki.png)
 
 1. Container Host
 2. CI host (Jenkins)
