@@ -3,16 +3,14 @@
 ## Web-app
 Simple Golang based app that allows you to create/view/edit wiki-like pages
 for local build:
-'''$ go build -o bin/gogowiki main.go'''
+'''$ go build -o web/app/ main.go'''
 
 for local docker build:
-'''$ docker build -t gogowiki:local .'''
+'''$ docker build -t gogowiki:local build/package/'''
 
 ## TODO
 
 ### Iteration 0: Manual deployment
-
-![Architecture](img/gogowiki.drawio.png)
 
 1. Container Host
 2. CI host (Jenkins)
